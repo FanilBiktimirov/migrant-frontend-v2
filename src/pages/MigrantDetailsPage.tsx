@@ -21,14 +21,14 @@ export function MigrantDetailsPage() {
 
     return (
         <Container maxWidth="lg" sx={{ py: 4 }}>
-            {migrantQ.isLoading && <Typography>Loading...</Typography>}
+            {migrantQ.isLoading && <Typography>Загрузка...</Typography>}
             {migrantQ.data && (
                 <Stack spacing={2}>
                     <Typography variant="h5">
                         {migrantQ.data.lastNameRu} {migrantQ.data.firstNameRu} {migrantQ.data.middleNameRu ?? ""}
                     </Typography>
                     <Typography>
-                        Category: {migrantQ.data.category} | Citizenship: {migrantQ.data.citizenship}
+                        Категория: {migrantQ.data.category} | Citizenship: {migrantQ.data.citizenship}
                     </Typography>
 
                     <Divider />

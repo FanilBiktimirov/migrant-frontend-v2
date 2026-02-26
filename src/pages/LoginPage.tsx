@@ -16,18 +16,18 @@ export function LoginPage() {
             await http.post(endpoints.auth.login, { email, password });
             nav("/");
         } catch (e: any) {
-            setErr(e?.response?.data?.message ?? "Login failed");
+            setErr(e?.response?.data?.message ?? "Ошибка авторизации");
         }
     }
 
     return (
         <Container maxWidth="sm" sx={{ py: 6 }}>
-            <Typography variant="h5" sx={{ mb: 2 }}>Login</Typography>
+            <Typography variant="h5" sx={{ mb: 2 }}>Вход</Typography>
             <Stack spacing={2}>
                 <TextField label="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                <TextField label="Password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                <TextField label="Пароль" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 {err && <Typography color="error">{err}</Typography>}
-                <Button variant="contained" onClick={onLogin}>Sign in</Button>
+                <Button variant="contained" onClick={onLogin}>Войти</Button>
             </Stack>
         </Container>
     );

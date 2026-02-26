@@ -22,13 +22,13 @@ export function ValidationPanel({ migrantId }: { migrantId: number }) {
 
     return (
         <Stack spacing={1}>
-            <Typography variant="h6">Validation</Typography>
+            <Typography variant="h6">Проверка документов</Typography>
 
             <Stack direction="row" spacing={1} alignItems="center">
                 <TextField
                     select
                     size="small"
-                    label="Event"
+                    label="Событие"
                     value={eventId ?? ""}
                     onChange={(e) => setEventId(Number(e.target.value))}
                     sx={{ minWidth: 300 }}

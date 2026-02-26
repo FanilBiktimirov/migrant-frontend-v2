@@ -68,13 +68,13 @@ export function MigrantsPage() {
                 alignItems="center"
                 sx={{ mb: 2 }}
             >
-                <Typography variant="h5">Migrants</Typography>
+                <Typography variant="h5">Мигранты</Typography>
                 <Stack direction="row" spacing={1}>
                     <Button onClick={() => nav("/admin/categories")}>
-                        Admin: Categories
+                        Админ панель: Категории
                     </Button>
                     <Button variant="contained" onClick={() => setOpen(true)}>
-                        Add migrant
+                        Добавить мигранта
                     </Button>
                 </Stack>
             </Stack>
@@ -85,13 +85,13 @@ export function MigrantsPage() {
                 onSubmit={(dto) => createM.mutate(dto)}
             />
 
-            {migrantsQ.isLoading && <Typography>Loading...</Typography>}
+            {migrantsQ.isLoading && <Typography>Загрузка...</Typography>}
             {migrantsQ.error && (
-                <Typography color="error">Failed to load</Typography>
+                <Typography color="error">Ошибка загрузки</Typography>
             )}
 
             {!migrantsQ.isLoading && migrants.length === 0 && (
-                <Typography>No migrants</Typography>
+                <Typography>Нет данных</Typography>
             )}
 
             {migrants.length > 0 && (
@@ -99,10 +99,10 @@ export function MigrantsPage() {
                     <Table>
                         <TableHead>
                             <TableRow>
-                                <TableCell>FIO</TableCell>
-                                <TableCell>Category</TableCell>
-                                <TableCell>Citizenship</TableCell>
-                                <TableCell>Phone</TableCell>
+                                <TableCell>ФИО</TableCell>
+                                <TableCell>Категория</TableCell>
+                                <TableCell>Гражданство</TableCell>
+                                <TableCell>Номер телефона</TableCell>
                                 <TableCell />
                             </TableRow>
                         </TableHead>
@@ -117,7 +117,7 @@ export function MigrantsPage() {
                                     <TableCell>{m.phone ?? "-"}</TableCell>
                                     <TableCell>
                                         <Button onClick={() => nav(`/migrants/${m.id}`)}>
-                                            Open
+                                            Открыть
                                         </Button>
                                     </TableCell>
                                 </TableRow>
